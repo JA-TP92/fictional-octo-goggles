@@ -1,0 +1,68 @@
+CREATE TABLE Students (
+  StudentID INT PRIMARY KEY,
+  StudentName VARCHAR(100),
+  Support BOOLEAN,
+  DateOfBirth DATE
+);
+INSERT INTO Students (StudentID, StudentName, Support, DateOfBirth) VALUES
+(1001, 'Bob Baker', FALSE, '2001-08-25'),
+(1002, 'Sally Davies', TRUE,  '1999-10-02'),
+(1003, 'Mark Hanmill', FALSE, '1995-06-05'),
+(1004, 'Anas Ali', FALSE, '1980-08-03'),
+(1005, 'Cheuk Yin', TRUE,  '2002-05-01');
+
+CREATE TABLE Teachers (
+  TeacherID VARCHAR(5) PRIMARY KEY,
+  TeacherName VARCHAR(100)
+);
+INSERT INTO Teachers (TeacherID, TeacherName) VALUES
+('T1', 'Mr Jones'),
+('T2', 'Ms Parker'),
+('T3', 'Mr Peters'),
+('T4', 'Mrs Patel'),
+('T5', 'Ms Daniels');
+
+CREATE TABLE ExamBoards (
+  EBID VARCHAR(5) PRIMARY KEY,
+  BoardName VARCHAR(50)
+);
+INSERT INTO ExamBoards (EBID, BoardName) VALUES
+('EB1', 'BCS'),
+('EB2', 'EdExcel'),
+('EB3', 'OCR'),
+('EB4', 'AQA'),
+('EB5', 'WJEC');
+
+GradeId	Score
+Z1	78
+Z2	78
+Z3	78
+Z4	55
+Z5	55
+Z6	55
+Z7	90
+Z8	90
+Z9	90
+Z10	70
+Z11	70
+Z12	70
+Z13	45
+Z14	45
+Z15	45
+INSERT INTO Grades (GradeID, Score) VALUES
+('Z1', 78),
+('Z2', 78),
+('Z3', 78),
+('Z4', 55),
+('Z5', 55),
+('Z6', 55),
+('Z7', 90),
+('Z8', 90),
+('Z9', 90),
+('Z10', 70),
+('Z11', 70),
+('Z12', 70),
+('Z13', 45),
+('Z14', 45),
+('Z15', 45);
+
