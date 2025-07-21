@@ -33,22 +33,11 @@ INSERT INTO ExamBoards (EBID, BoardName) VALUES
 ('EB4', 'AQA'),
 ('EB5', 'WJEC');
 
-GradeId	Score
-Z1	78
-Z2	78
-Z3	78
-Z4	55
-Z5	55
-Z6	55
-Z7	90
-Z8	90
-Z9	90
-Z10	70
-Z11	70
-Z12	70
-Z13	45
-Z14	45
-Z15	45
+CREATE TABLE Grades (
+  GradeID VARCHAR(5) PRIMARY KEY,
+  Score INT
+);
+
 INSERT INTO Grades (GradeID, Score) VALUES
 ('Z1', 78),
 ('Z2', 78),
@@ -65,4 +54,3 @@ INSERT INTO Grades (GradeID, Score) VALUES
 ('Z13', 45),
 ('Z14', 45),
 ('Z15', 45);
-
