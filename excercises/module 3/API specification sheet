@@ -1,0 +1,43 @@
+## Overview
+This document outlines the evaluation and security requirements specification for the OpenWeatherMap API,a weather forecast tool. We will focusi on data sharing, scraping, and connectivity between Python-based applications and external data formats such as XML, JSON, and SQL.
+
+## API Evaluation Summary
+The OpenWeatherMap API allows  access to real-time and historical weather data. Data is primarily  in JSON format, making it a popular choice for data wrangling tasks in Python.
+
+### Key Features:
+- JSON-based RESTful interface
+- API key authentication
+- Granular endpoints for weather types
+
+## Security Specification
+
+| Requirement                          | Purpose                                                       | Risk Mitigated                                 |
+|-------------------------------------|----------------------------------------------------------------|------------------------------------------------|
+| **API Key Management**              | Use environment variables or secret vaults to store API keys   | Prevent key exposure and unauthorized use      |
+| **Rate Limiting Awareness**         | Respect API usage quotas to avoid service interruption         | Avoid throttling and account suspension        |
+| **HTTPS Enforcement**              | Ensure all connections to API use HTTPS                        | Prevent man-in-the-middle attacks              |
+| **Data Validation on Input/Output** | Use validation libraries like `pydantic` or `jsonschema`       | Avoid injection attacks and data corruption    |
+| **Error Logging and Monitoring**    | Log failed requests and use retry logic                        | Debug issues without exposing sensitive info   |
+| **SQL Injection Mitigation**        | Use ORM tools or parameterized queries for SQL connectivity    | Prevent SQL injection via scraped content      |
+
+## File Format and Management System Integration
+
+### JSON
+- Natively supported by the API
+- Can be handled with Python libraries such as `requests`, `json`, and `pandas`
+
+
+###  XML
+- Requires additional parsing with `xml.etree.ElementTree` or `lxml`
+- Security: disable external entity resolution (XXE prevention)
+
+### SQL
+- Ability to stramline to databases with tools such as `sqlite3`, or `pandas.to_sql`
+- Security: sanitize data before insertion, validate types, use secure credentials
+
+### References
+OpenWeatherMap.(N.D-) API guide. Available from: https://openweathermap.org/api [Accessed: 20 July 2025].
+OpenWeather Ltd.(N.D.) How to start with OpenWeather API. Available from: https://docs.openweather.co.uk/appid [Accessed: 20 July 2025].
+
+
+---
